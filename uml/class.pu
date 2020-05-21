@@ -1,0 +1,37 @@
+@startuml
+package "servlet"{
+	class BbsServlet{
+		+doGet()
+		+doPost()
+	}
+	class DelPostServlet{
+		+doGet()
+		+doPost()
+
+	}
+	class PostingServlet{
+		+doGet()
+
+
+	}
+}
+
+package "bbs"{
+	class BbsDAO{
+		+getAll()
+		+insert()
+		+deleteById()
+
+	}
+	class Post{
+	+getAll()
+	+insert()
+	+deleteById()
+
+	}
+
+}
+
+
+
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+title 閲覧
+autonumber
+actor ユーザー
+participant BbsServlet
+participant bbs.jsp
+database BbsDAO
+
+ユーザー -> BbsServlet :ページ読み込み()
+BbsServlet -> BbsDAO : new
+BbsServlet -> BbsDAO : getAll()
+BbsServlet ->bbs.jsp :フォワード
+bbs.jsp --> ユーザー :表示
+
+@enduml

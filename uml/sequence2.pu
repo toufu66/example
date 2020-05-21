@@ -1,0 +1,14 @@
+@startuml
+autonumber
+title 書き込み
+actor ユーザー
+ユーザー -> bbs.jsp
+bbs.jsp -> PostingServlet :
+PostingServlet -> BbsDAO :new
+PostingServlet -> BbsDAO :insert()
+PostingServlet -> BbsDAO :getAll()
+
+PostingServlet --> bbs.jsp :リダイレクト
+bbs.jsp-->ユーザー :表示
+
+@enduml

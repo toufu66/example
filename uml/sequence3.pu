@@ -1,0 +1,16 @@
+@startuml
+autonumber
+title 削除
+actor ユーザー
+participant bbs.jsp
+participant DelPostServlet
+database BbsDAO
+
+ユーザー -> bbs.jsp
+bbs.jsp -> DelPostServlet : doPost()
+DelPostServlet -> BbsDAO :new
+DelPostServlet -> BbsDAO :deleteById()
+DelPostServlet --> bbs.jsp :ディスパッチ
+bbs.jsp -> ユーザー: 表示
+
+@enduml
