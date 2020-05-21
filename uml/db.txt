@@ -1,0 +1,20 @@
+スキーマ名:bbs
+テーブル名:toukou
+列名:
+id:
+	投稿ID
+	int
+	primary key
+	autoincrement
+
+day_time:
+	投稿日時
+	datetime
+
+name:
+	投稿者
+	varchar(64)
+
+honbun:
+	本文
+	varchar(512)
