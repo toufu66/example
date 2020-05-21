@@ -23,7 +23,7 @@
 
 <c:forEach items="${list}" var="e">
 
-	<li><a href = "memo?mid = ${e.mid}">${e.body}</a></li>
+	<li><a href ="memo?mid=${e.mid}">${e.title}</a></li>
 
 </c:forEach>
 
