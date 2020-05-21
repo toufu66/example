@@ -23,9 +23,8 @@
 
 
 <p>${e.body}</p>
-
 <br>
-
+<a href = "memolist">戻る</a>
 
 </body>
 </html>
