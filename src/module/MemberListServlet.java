@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import db_club.Member;
 import db_club.MemberDAO;
@@ -32,10 +33,10 @@ public class MemberListServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 		MemberDAO edao  = new MemberDAO();
     	ArrayList<Member> e =  edao.findALL();
-    	request.setAttribute("e", e);
+		HttpSession session = request.getSession();
+		session.setAttribute("e", e);
 		RequestDispatcher rd = request.getRequestDispatcher("/mlist.jsp");
 		rd.forward(request, response);
 
